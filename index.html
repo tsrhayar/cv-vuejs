@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Titre</h2>
+                <div class="mb-3">
+                    <label class="form-label">Titre</label>
+                    <input type="text" class="form-control" id="titre" placeholder="Enter Titre">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="Enter Full Name">
+                </div>
+            </form>
+        </div>
+        <div class="container" >
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Telephone</label>
+                    <input type="number" class="form-control" id="phone" placeholder="Enter Phone">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Enter Adress">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Autre lien</label>
+                    <input type="text" class="form-control" id="autreLien" placeholder="Enter Autre lien">
+                </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Compétences techniques</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Compétences techniques" id="competences"></textarea>
+                    <label for="floatingTextarea">Comments</label>
+                    </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Expériences professionnelles</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Expériences professionnelles" id="experiences"></textarea>
+                    <label for="floatingTextarea">Experiences</label>
+                    </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Formations</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Formations" id="formations"></textarea>
+                    <label for="floatingTextarea">Formations</label>
+                    </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Projets réalisés</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Projets réalisés" id="projetsRealises"></textarea>
+                    <label for="floatingTextarea">Projets réalisés</label>
+                    </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Langues</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Langues" id="langues"></textarea>
+                    <label for="floatingTextarea">Langues</label>
+                    </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <form>
+                <h2>Centres D’intérêts</h2>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Centres D’intérêts" id="centresDinterets"></textarea>
+                    <label for="floatingTextarea">Centres D’intérêts</label>
+                </div>
+            </form>
+        </div>
+    </session>
+    <hr>
+    <session>
+        <div class="container" >
+            <div class="d-grid gap-2">
+                <button onclick="saveCV()" class="btn btn-warning" type="button">Button</button>
+            </div>
+        </div>
+    </session>
+
+    <script>
+        function saveCV(){
+            var titre = document.getElementById('titre').value;
+            var fullName = document.getElementById('fullName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var autreLien = document.getElementById('autreLien').value;
+            var competences = document.getElementById('competences').value;
+            var experiences = document.getElementById('experiences').value;
+            var formations = document.getElementById('formations').value;
+            var projetsRealises = document.getElementById('projetsRealises').value;
+            var langues = document.getElementById('langues').value;
+            var centresDinterets = document.getElementById('centresDinterets').value;
+            // localStorage.setItem('testingvuejs',a);
+            var dataCv = {
+                titre:titre,
+                fullName:fullName,
+                email:email,
+                phone:phone,
+                address:address,
+                autreLien:autreLien,
+                competences:competences,
+                experiences:experiences,
+                formations:formations,
+                projetsRealises:projetsRealises,
+                langues:langues,
+                centresDinterets:centresDinterets,
+            }
+            localStorage.setItem('localDataCv', JSON.stringify(dataCv));
+            window.location.assign("result.html")
+        }
+        
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
